@@ -4,6 +4,7 @@ import Modal from "./Modal";
 import { aboutMeData } from "../data/aboutMeData";
 import { projectsData } from "../data/projectsData";
 import { contactMeData } from "../data/contactMeData";
+import Column from "./Column";
 
 const JeopardyBoard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,27 +34,6 @@ const JeopardyBoard = () => {
     });
   };
 
-  const renderTile = (
-    tile: { value: string; detail: string },
-    index: number,
-    category: string
-  ) => {
-    const tileKey = `${category}-${index}`; // Unique key for each tile
-    const isOpened = openedTiles.has(tileKey); // Check if tile has been opened
-
-    return (
-      <div
-        key={tileKey}
-        className={`bg-blue-900 text-yellow-400 text-lg py-6 border border-white hover:scale-105 transition-transform cursor-pointer ${
-          isOpened ? "bg-gray-500 text-gray-300" : ""
-        }`} // Change style if tile is opened
-        onClick={() => handleTileClick(tile.detail, tileKey, tile.value)}
-      >
-        {tile.value}
-      </div>
-    );
-  };
-
   return (
     <div className="max-w-4xl mx-auto mt-10 grid grid-cols-4 gap-4 text-center">
       <div className="text-center text-2xl font-bold mb-6">
@@ -61,28 +41,28 @@ const JeopardyBoard = () => {
       </div>
 
       {/* About Me Column */}
-      <div>
-        <div className="bg-blue-800 text-white font-bold text-xl py-4 border border-white">
-          About Me
-        </div>
-        {aboutMeData.map((tile, index) => renderTile(tile, index, "aboutMe"))}
-      </div>
+      <Column
+        data={aboutMeData}
+        header="About Me"
+        handleTileClick={handleTileClick}
+        openedTiles={openedTiles}
+      />
 
       {/* Projects Column */}
-      <div>
-        <div className="bg-blue-800 text-white font-bold text-xl py-4 border border-white">
-          Projects
-        </div>
-        {projectsData.map((tile, index) => renderTile(tile, index, "projects"))}
-      </div>
+      <Column
+        data={projectsData}
+        header="Projects"
+        handleTileClick={handleTileClick}
+        openedTiles={openedTiles}
+      />
 
       {/* Contact Column */}
-      <div>
-        <div className="bg-blue-800 text-white font-bold text-xl py-4 border border-white">
-          Contact
-        </div>
-        {contactMeData.map((tile, index) => renderTile(tile, index, "contact"))}
-      </div>
+      <Column
+        data={contactMeData}
+        header="Contact"
+        handleTileClick={handleTileClick}
+        openedTiles={openedTiles}
+      />
 
       {/* Thank You Modal */}
       <Modal
