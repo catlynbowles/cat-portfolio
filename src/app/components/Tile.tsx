@@ -12,7 +12,7 @@ const Tile = ({ tileKey, tile, handleTileClick, isOpened }: TileProps) => {
   return (
     <div
       key={tileKey}
-      className={`relative w-full h-full cursor-pointer border border-white`}
+      className={`relative w-40 h-40 cursor-pointer border border-white`}
       onClick={() => handleTileClick(tile.detail, tileKey, tile.value)}
     >
       {/* Lottie Animation */}
@@ -20,7 +20,9 @@ const Tile = ({ tileKey, tile, handleTileClick, isOpened }: TileProps) => {
         src="https://lottie.host/ca27c5a0-92b2-4b9b-b4cf-4c859bd32319/K6yO9xyNlm.lottie"
         loop
         autoplay
-        className="absolute inset-0 w-full h-full pointer-events-none"
+        className={`absolute inset-0 h-full w-full pointer-events-none ${
+          isOpened ? "opacity-0" : "opacity-100"
+        }`}
       />
 
       {/* Tile Content */}
