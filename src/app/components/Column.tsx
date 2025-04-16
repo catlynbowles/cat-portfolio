@@ -39,7 +39,7 @@ const Column = ({
   };
   return (
     <div>
-      <div className="bg-blue-800 text-white font-bold text-xl py-4 border border-white">
+      <div className=" header-box header-column-text text-white font-oswald text-3xl py-4 border border-black text-center shadow-md">
         {header}
       </div>
       {data.map((tile, index) => renderTile(tile, index, header))}
