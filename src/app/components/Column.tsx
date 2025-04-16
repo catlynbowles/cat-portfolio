@@ -39,9 +39,7 @@ const Column = ({
   };
   return (
     <div>
-      <div className=" header-box header-column-text text-white font-oswald text-3xl py-4 border border-black text-center shadow-md">
-        {header}
-      </div>
+      <div className="header-column-text">{header}</div>
       {data.map((tile, index) => renderTile(tile, index, header))}
     </div>
   );

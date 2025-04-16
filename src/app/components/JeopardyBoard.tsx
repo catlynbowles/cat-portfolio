@@ -36,7 +36,7 @@ const JeopardyBoard = () => {
 
   return (
     <>
-      <div className="text-center text-2xl font-bold mb-6">
+      <div className="text-center text-2xl font-bold mb-6 hidden">
         Total Money: <span className="text-green-500">${totalMoney}</span>
       </div>
       <div className="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-3 text-center">
