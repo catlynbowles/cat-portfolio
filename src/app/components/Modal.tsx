@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
         }}
       >
         <button
-          className="absolute top-10 right-10 modal-text hover:text-gray-300 text-3xl"
+          className="absolute top-10 right-10 modal-text hover:text-gray-300 text-3xl cursor-pointer"
           onClick={onClose}
         >
           ✖
