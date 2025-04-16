@@ -112,14 +112,16 @@ body {
 
 .tile-content-text {
   font-family: "Press Start 2P", monospace;
-  font-size: 2.5rem;
-  color: #ffcc00; /* Jeopardy gold */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000; /* black outline */
+  font-size: 3rem;
+  color: #ffcc00;
+  text-shadow: 0 0 6px #000, /* Soft black glow */ 0 0 12px #000,
+    /* Slightly larger black glow */ 0 0 18px #222,
+    /* Dark gray glow for depth */ 0 0 24px #111,
+    /* Deeper black glow */ 0 0 36px #111; /* Extended soft black glow */
   z-index: 2;
 }
 
-/* Static Effect (hidden by default) */
+/* Static Effect */
 .static-effect {
   position: absolute;
   inset: 0;
