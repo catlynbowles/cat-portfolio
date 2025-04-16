@@ -141,6 +141,7 @@ body {
 }
 
 .header-column-text {
+  min-width: 100%;
   text-transform: uppercase;
   border-radius: 1rem;
   font-family: "Oswald", sans-serif;

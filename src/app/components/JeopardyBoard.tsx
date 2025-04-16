@@ -37,11 +37,9 @@ const JeopardyBoard = () => {
   };
 
   return (
-    <div className="flex flex-row gap-10">
-      <div className="text-center text-2xl font-bold mb-6 hidden">
-        Total Money: <span className="text-green-500">${totalMoney}</span>
-      </div>
-      <div className="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-4 text-center">
+    <div className="flex flex-col md:flex-row items-center gap-10">
+      <PanelistBooth amount={totalMoney} />
+      <div className="grid grid-cols-1 gap-6 sm:gap-0 md:grid-cols-2 lg:grid-cols-4 text-center">
         {/* About Me Column */}
         <Column
           data={aboutMeData}
@@ -88,7 +86,6 @@ const JeopardyBoard = () => {
           content={modalContent}
         />
       </div>
-      <PanelistBooth amount={totalMoney} />
     </div>
   );
 };
