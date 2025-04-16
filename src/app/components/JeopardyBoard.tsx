@@ -5,6 +5,7 @@ import { aboutMeData } from "../data/aboutMeData";
 import { projectsData } from "../data/projectsData";
 import { contactMeData } from "../data/contactMeData";
 import Column from "./Column";
+import { refsData } from "../data/refsData";
 
 const JeopardyBoard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,7 +40,7 @@ const JeopardyBoard = () => {
       <div className="text-center text-2xl font-bold mb-6 hidden">
         Total Money: <span className="text-green-500">${totalMoney}</span>
       </div>
-      <div className="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-3 text-center">
+      <div className="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-4 text-center">
         {/* About Me Column */}
         <Column
           data={aboutMeData}
@@ -60,6 +61,14 @@ const JeopardyBoard = () => {
         <Column
           data={contactMeData}
           header="Contact"
+          handleTileClick={handleTileClick}
+          openedTiles={openedTiles}
+        />
+
+        {/* Recommendations Column */}
+        <Column
+          data={refsData}
+          header="Refs"
           handleTileClick={handleTileClick}
           openedTiles={openedTiles}
         />

@@ -34,14 +34,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.tv-screen-bg {
+  border-radius: 1rem;
+  background: radial-gradient(circle at center, #002766 0%, #001133 100%);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  /* 🖤 Outer TV bezel */
+  border: 8px solid #111; /* Slightly thicker frame */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8),
+    /* Softer outer shadow */ inset 0 -4px 6px rgba(0, 0, 0, 0.7),
+    /* Inner shadow for depth */ inset 0 4px 4px rgba(255, 255, 255, 0.05),
+    /* Subtle highlight */ 0 0 0 3px #222; /* Outer plastic edge closer to the black line */
+}
+
 /* Tile Container */
 .tile-container {
   position: relative;
   width: 12rem;
   height: 8rem;
   cursor: pointer;
-  border-radius: 1rem;
-  background: radial-gradient(circle at center, #002766 0%, #001133 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -51,13 +62,6 @@ body {
   margin-bottom: 0.5rem;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-
-  /* 🖤 Outer TV bezel */
-  border: 8px solid #111; /* Slightly thicker frame */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8),
-    /* Softer outer shadow */ inset 0 -4px 6px rgba(0, 0, 0, 0.7),
-    /* Inner shadow for depth */ inset 0 4px 4px rgba(255, 255, 255, 0.05),
-    /* Subtle highlight */ 0 0 0 3px #222; /* Outer plastic edge closer to the black line */
 }
 
 .tile-container::before {
@@ -131,6 +135,9 @@ body {
 }
 
 .header-column-text {
+  display: inline-block; /* Allows the width to adjust to the text */
+  text-align: center; /* Centers the text */
+  padding: 0.5rem 1rem;
   text-transform: uppercase;
   border-radius: 1rem;
   font-family: "Oswald", sans-serif;
@@ -153,6 +160,37 @@ body {
     /* Softer outer shadow */ inset 0 -4px 6px rgba(0, 0, 0, 0.7),
     /* Inner shadow for depth */ inset 0 4px 4px rgba(255, 255, 255, 0.05),
     /* Subtle highlight */ 0 0 0 3px #222;
+}
+
+.modal-text {
+  text-transform: uppercase;
+
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: "#ffff";
+  text-shadow: 0 0 6px #000, /* Soft black glow */ 0 0 12px #000,
+    /* Slightly larger black glow */ 0 0 18px #222,
+    /* Dark gray glow for depth */ 0 0 24px #111,
+    /* Deeper black glow */ 0 0 36px #111; /* Extended soft black glow */
+  /* background: radial-gradient(circle at center, #002766 0%, #001133 100%); */
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #002766 0%, #001133 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  z-index: 2;
 }
 
 /* Static Effect */

@@ -11,7 +11,9 @@ const Tile = ({ tileKey, tile, handleTileClick, isOpened }: TileProps) => {
   return (
     <div
       key={tileKey}
-      className={`tile-container ${isOpened ? "pointer-events-none" : ""}`}
+      className={`tile-container tv-screen-bg ${
+        isOpened ? "pointer-events-none" : ""
+      }`}
       onClick={() => handleTileClick(tile.detail, tileKey, tile.value)}
     >
       {!isOpened && (
