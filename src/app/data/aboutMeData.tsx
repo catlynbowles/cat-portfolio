@@ -12,12 +12,12 @@ export const aboutMeData = [
   {
     value: "$300",
     detail:
-      "I love road trips, quiet campfires, paddleboarding alpine lakes, and carving fresh powder on my snowboard in the winter.",
+      "I love road trips, quiet campfires, paddleboarding alpine lakes, and getting out on my snowboard in the winter.",
   },
   {
     value: "$400",
     detail:
-      "One of my biggest dreams is to hike the entire Pacific Crest Trail — 2,650 miles of adventure and reflection.",
+      "One of my biggest dreams is to hike the entire Pacific Crest Trail — I think 2,650 miles of wilderness and reflection would change a person.",
   },
   {
     value: "$500",

@@ -1,9 +1,14 @@
 export const contactMeData = [
-  { value: "$100", detail: "email: catlynbowles@gmail.com" },
+  {
+    value: "$100",
+    detail: {
+      title: "Email: catlynbowles@gmail.com",
+      url: "mailto:catlynbowles@gmail.com",
+    },
+  },
   {
     value: "$200",
     detail: { title: "LinkedIn", url: "https://linkedin.com/in/catlyn-bowles" },
-    isLink: true,
   },
   {
     value: "$300",
@@ -11,7 +16,6 @@ export const contactMeData = [
       title: "GitHub",
       url: "https://github.com/catlynbowles",
     },
-    isLink: true,
   },
   { value: "$400", detail: "I hope you enjoyed my personal website!" },
 ];

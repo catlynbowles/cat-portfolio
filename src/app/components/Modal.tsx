@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
           ✖
         </button>
         {typeof content === "string" ? (
-          <div className="modal-text m-10">{content}</div>
+          <div className="modal-text m-10 md:m-20">{content}</div>
         ) : (
           <a
             href={content.url}
@@ -41,7 +41,9 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
             rel="noopener noreferrer"
             className="underline text-white"
           >
-            <div className="modal-text m-10 text-white">{content.title}</div>
+            <div className="modal-text m-10 md:m-20 text-white">
+              {content.title}
+            </div>
           </a>
         )}
       </div>
