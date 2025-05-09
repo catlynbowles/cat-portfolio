@@ -1,9 +1,14 @@
 import React from "react";
+import { TileType } from "./Column";
 
 interface TileProps {
   tileKey: string;
-  tile: { value: string; detail: string };
-  handleTileClick: (detail: string, tileKey: string, value: string) => void;
+  tile: TileType;
+  handleTileClick: (
+    detail: string | { title: string; url: string },
+    tileKey: string,
+    value: string
+  ) => void;
   isOpened: boolean;
 }
 

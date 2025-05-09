@@ -10,7 +10,9 @@ import PanelistBooth from "./PanelistBooth";
 
 const JeopardyBoard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  const [modalContent, setModalContent] = useState<
+    string | { title: string; url: string }
+  >("");
   const [openedTiles, setOpenedTiles] = useState<Set<string>>(new Set()); // Tracks opened tiles
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false); // Tracks if the "Thank You" modal is open
   const [totalMoney, setTotalMoney] = useState(0); // Tracks total money accrued
@@ -18,7 +20,11 @@ const JeopardyBoard = () => {
   const totalTiles =
     aboutMeData.length + projectsData.length + contactMeData.length;
 
-  const handleTileClick = (detail: string, tileKey: string, value: string) => {
+  const handleTileClick = (
+    detail: string | { title: string; url: string },
+    tileKey: string,
+    value: string
+  ) => {
     setModalContent(detail);
     setIsModalOpen(true);
 
