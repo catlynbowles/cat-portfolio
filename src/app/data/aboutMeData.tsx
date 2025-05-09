@@ -2,26 +2,26 @@ export const aboutMeData = [
   {
     value: "$100",
     detail:
-      "I grew up in Colorado, riding horses and learning to love the mountains — I'm a true Colorado girl through and through.",
+      "I grew up in Colorado, riding horses, camping, and falling in love with the mountains — a true Colorado native at heart!",
   },
   {
     value: "$200",
     detail:
-      "Before tech, I worked as a massage therapist at an oncology center, a waitress, and for the airlines — people and adaptability are in my toolkit.",
+      "Before tech, I worked as a massage therapist at an oncology center, a waitress, and in the airline industry — roles that taught me adaptability and how to connect with people.",
   },
   {
     value: "$300",
     detail:
-      "I'm all about road trips, campfire mornings, paddleboarding alpine lakes, and carving powder on my snowboard in the winter.",
+      "I love road trips, quiet campfires, paddleboarding alpine lakes, and getting out on my snowboard in the winter.",
   },
   {
     value: "$400",
     detail:
-      "One of my biggest dreams is to hike the entire Pacific Crest Trail — 2,650 miles of wild terrain, trail snacks, and soul-searching.",
+      "One of my biggest dreams is to hike the entire Pacific Crest Trail — I think 2,650 miles of wilderness and reflection would change a person.",
   },
   {
     value: "$500",
     detail:
-      "I transitioned into tech with a certificate from Turing School and now build beautiful, accessible apps using React, Tailwind, and more.",
+      "I love the problem-solving process in engineering — when I get stuck, I can’t stop thinking about it until I’ve cracked it.",
   },
 ];
