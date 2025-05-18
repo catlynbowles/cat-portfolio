@@ -4,15 +4,13 @@ import Modal from "./Modal";
 import { aboutMeData } from "../data/aboutMeData";
 import { projectsData } from "../data/projectsData";
 import { contactMeData } from "../data/contactMeData";
-import Column from "./Column";
+import Column, { Detail } from "./Column";
 import { refsData } from "../data/refsData";
 import PanelistBooth from "./PanelistBooth";
 
 const JeopardyBoard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<
-    string | { title: string; url: string }
-  >("");
+  const [modalContent, setModalContent] = useState<Detail>("");
   const [openedTiles, setOpenedTiles] = useState<Set<string>>(new Set()); // Tracks opened tiles
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false); // Tracks if the "Thank You" modal is open
   const [totalMoney, setTotalMoney] = useState(0); // Tracks total money accrued
@@ -20,11 +18,8 @@ const JeopardyBoard = () => {
   const totalTiles =
     aboutMeData.length + projectsData.length + contactMeData.length;
 
-  const handleTileClick = (
-    detail: string | { title: string; url: string },
-    tileKey: string,
-    value: string
-  ) => {
+  const handleTileClick = (detail: Detail, tileKey: string, value: string) => {
+    console.log(detail);
     setModalContent(detail);
     setIsModalOpen(true);
 

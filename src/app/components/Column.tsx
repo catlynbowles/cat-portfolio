@@ -1,19 +1,19 @@
 import React from "react";
 import Tile from "./Tile";
 
+export type Detail =
+  | string
+  | { title?: string; url?: string; media?: React.ReactNode };
+
 export type TileType = {
   value: string;
-  detail: string | { title: string; url: string };
+  detail: Detail;
 };
 
 type ColumnProps = {
   data: TileType[];
   header: string;
-  handleTileClick: (
-    detail: string | { title: string; url: string },
-    tileKey: string,
-    value: string
-  ) => void;
+  handleTileClick: (detail: Detail, tileKey: string, value: string) => void;
   openedTiles: Set<string>;
 };
 
@@ -24,7 +24,7 @@ const Column = ({
   openedTiles,
 }: ColumnProps) => {
   const renderTile = (
-    tile: { value: string; detail: string | { title: string; url: string } },
+    tile: { value: string; detail: Detail },
     index: number,
     category: string
   ) => {
