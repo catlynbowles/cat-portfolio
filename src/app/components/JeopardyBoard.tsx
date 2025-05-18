@@ -19,7 +19,6 @@ const JeopardyBoard = () => {
     aboutMeData.length + projectsData.length + contactMeData.length;
 
   const handleTileClick = (detail: Detail, tileKey: string, value: string) => {
-    console.log(detail);
     setModalContent(detail);
     setIsModalOpen(true);
 
