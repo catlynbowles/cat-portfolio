@@ -2,7 +2,7 @@ export const aboutMeData = [
   {
     value: "$100",
     detail:
-      "I grew up in Colorado, riding horses, camping, and falling in love with the mountains, and it still feel like home to me here!",
+      "I grew up in Colorado, riding horses, camping, and falling in love with the mountains, and it still feels like home to me here!",
   },
   {
     value: "$200",
