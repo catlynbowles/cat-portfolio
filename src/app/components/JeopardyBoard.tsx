@@ -10,28 +10,26 @@ import PanelistBooth from "./PanelistBooth";
 
 const JeopardyBoard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<Detail>("");
-  const [openedTiles, setOpenedTiles] = useState<Set<string>>(new Set()); // Tracks opened tiles
-  const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false); // Tracks if the "Thank You" modal is open
-  const [totalMoney, setTotalMoney] = useState(0); // Tracks total money accrued
+  const [modalContent, setModalContent] = useState<Detail>({});
+  const [openedTiles, setOpenedTiles] = useState<Set<string>>(new Set());
+  // const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
+  const [totalMoney, setTotalMoney] = useState(0);
 
-  const totalTiles =
-    aboutMeData.length + projectsData.length + contactMeData.length;
+  // const totalTiles =
+  //   aboutMeData.length + projectsData.length + contactMeData.length;
 
   const handleTileClick = (detail: Detail, tileKey: string, value: string) => {
     setModalContent(detail);
     setIsModalOpen(true);
 
-    // Add tile value to total money
-    const numericValue = parseInt(value.replace("$", ""), 10); // Convert "$100" to 100
+    const numericValue = parseInt(value.replace("$", ""), 10);
     setTotalMoney((prev) => prev + numericValue);
 
     setOpenedTiles((prev) => {
-      const updatedSet = new Set(prev).add(tileKey); // Mark tile as opened
-      if (updatedSet.size === totalTiles) {
-        // If all tiles are opened, show the "Thank You" modal
-        setIsThankYouModalOpen(true);
-      }
+      const updatedSet = new Set(prev).add(tileKey);
+      // if (updatedSet.size === totalTiles) {
+      //   setIsThankYouModalOpen(true);
+      // }
       return updatedSet;
     });
   };
@@ -73,22 +71,19 @@ const JeopardyBoard = () => {
         />
 
         {/* Thank You Modal */}
-        <Modal
+        {/* <Modal
           isOpen={isThankYouModalOpen}
           onClose={() => setIsThankYouModalOpen(false)}
-          content={"thank you for visiting !"}
-        />
+          content={{ title: "thank you for visiting !" }}
+        /> */}
 
         {/* Modal for Tile Content */}
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
+          media={modalContent?.media}
           content={modalContent}
-        >
-          {typeof modalContent === "object" &&
-            modalContent?.media &&
-            modalContent.media}
-        </Modal>
+        />
       </div>
     </div>
   );

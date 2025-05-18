@@ -1,9 +1,7 @@
 import React from "react";
 import Tile from "./Tile";
 
-export type Detail =
-  | string
-  | { title?: string; url?: string; media?: React.ReactNode };
+export type Detail = { title?: string; url?: string; media?: React.ReactNode };
 
 export type TileType = {
   value: string;

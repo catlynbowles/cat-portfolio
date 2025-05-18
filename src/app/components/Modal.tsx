@@ -6,10 +6,10 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   content: Detail;
-  children?: React.ReactNode;
+  media?: React.ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
+const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-        onClick={onClose} // Close modal when clicking on the overlay
+        onClick={onClose}
       ></div>
 
       {/* Modal Content */}
@@ -36,10 +36,9 @@ const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
         </button>
 
         <div className="flex flex-col">
-          {children}
-          {typeof content === "string" ? (
-            <div className="modal-text m-10 md:m-20">{content}</div>
-          ) : (
+          {media}
+
+          {content.url ? (
             <a
               href={content.url}
               target="_blank"
@@ -50,6 +49,8 @@ const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
                 {content.title}
               </div>
             </a>
+          ) : (
+            <div className="modal-text m-10 md:m-20">{content.title}</div>
           )}
         </div>
       </div>
@@ -68,7 +69,7 @@ const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
         `}
       </style>
     </div>,
-    document.body // Render the modal into the <body> element
+    document.body
   );
 };
 

@@ -1,14 +1,10 @@
 import React from "react";
-import { TileType } from "./Column";
+import { Detail, TileType } from "./Column";
 
 interface TileProps {
   tileKey: string;
   tile: TileType;
-  handleTileClick: (
-    detail: Detail,
-    tileKey: string,
-    value: string
-  ) => void;
+  handleTileClick: (detail: Detail, tileKey: string, value: string) => void;
   isOpened: boolean;
 }
 

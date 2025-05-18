@@ -14,13 +14,17 @@ export const projectsData = [
   },
   {
     value: "$200",
-    detail:
-      "At Allbridge, I helped create responsive Vue-based splash pages used by over 10,000 hotel guests each month to get online quickly and easily. The goal was to make WiFi onboarding as smooth as possible, and I focused on building clean, accessible UIs that worked seamlessly across a variety of devices and properties.",
+    detail: {
+      title:
+        "At Allbridge, I helped create responsive Vue-based splash pages used by over 10,000 hotel guests each month to get online quickly and easily. The goal was to make WiFi onboarding as smooth as possible, and I focused on building clean, accessible UIs that worked seamlessly across a variety of devices and properties.",
+    },
   },
   {
     value: "$300",
-    detail:
-      "At Allbridge, I helped build Skyway, a mobile dashboard for monitoring internet connectivity across 100+ hospitality properties. It gave real-time visibility into thousands of connected devices. I focused on the front-end, using React Native and Vue to create a smooth user experience for internal IT teams troubleshooting complex network issues.",
+    detail: {
+      title:
+        "At Allbridge, I helped build Skyway, a mobile dashboard for monitoring internet connectivity across 100+ hospitality properties. It gave real-time visibility into thousands of connected devices. I focused on the front-end, using React Native and Vue to create a smooth user experience for internal IT teams troubleshooting complex network issues.",
+    },
   },
   {
     value: "$400",
