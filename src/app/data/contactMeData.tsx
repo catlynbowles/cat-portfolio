@@ -17,5 +17,4 @@ export const contactMeData = [
       url: "https://github.com/catlynbowles",
     },
   },
-  { value: "$400", detail: "I hope you enjoyed my personal website!" },
 ];

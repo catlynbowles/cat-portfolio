@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Detail } from "./Column";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  content: string | { title: string; url: string };
+  content: Detail;
+  media?: React.ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, content }: ModalProps) => {
+const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
@@ -16,7 +18,7 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-        onClick={onClose} // Close modal when clicking on the overlay
+        onClick={onClose}
       ></div>
 
       {/* Modal Content */}
@@ -32,20 +34,25 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
         >
           ✖
         </button>
-        {typeof content === "string" ? (
-          <div className="modal-text m-10 md:m-20">{content}</div>
-        ) : (
-          <a
-            href={content.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-white"
-          >
-            <div className="modal-text m-10 md:m-20 text-white">
-              {content.title}
-            </div>
-          </a>
-        )}
+
+        <div className="flex flex-col items-center">
+          {media && <div className="pt-24">{media}</div>}
+
+          {content.url ? (
+            <a
+              href={content.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${content.url && "underline"} text-white`}
+            >
+              <div className="modal-text m-10 md:m-20 text-white">
+                {content.title}
+              </div>
+            </a>
+          ) : (
+            <div className="modal-text m-10 md:m-20">{content.title}</div>
+          )}
+        </div>
       </div>
 
       {/* Spiral Animation */}
@@ -62,7 +69,7 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
         `}
       </style>
     </div>,
-    document.body // Render the modal into the <body> element
+    document.body
   );
 };
 
