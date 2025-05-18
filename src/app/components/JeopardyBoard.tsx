@@ -85,7 +85,11 @@ const JeopardyBoard = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           content={modalContent}
-        />
+        >
+          {typeof modalContent === "object" &&
+            modalContent?.media &&
+            modalContent.media}
+        </Modal>
       </div>
     </div>
   );

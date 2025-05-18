@@ -5,7 +5,7 @@ interface TileProps {
   tileKey: string;
   tile: TileType;
   handleTileClick: (
-    detail: string | { title: string; url: string },
+    detail: Detail,
     tileKey: string,
     value: string
   ) => void;

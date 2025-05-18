@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Detail } from "./Column";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  content: string | { title: string; url: string };
+  content: Detail;
+  children?: React.ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, content }: ModalProps) => {
+const Modal = ({ isOpen, onClose, content, children }: ModalProps) => {
+  console.log(children);
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
@@ -32,20 +35,24 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
         >
           ✖
         </button>
-        {typeof content === "string" ? (
-          <div className="modal-text m-10 md:m-20">{content}</div>
-        ) : (
-          <a
-            href={content.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-white"
-          >
-            <div className="modal-text m-10 md:m-20 text-white">
-              {content.title}
-            </div>
-          </a>
-        )}
+
+        <div className="flex flex-col">
+          {children}
+          {typeof content === "string" ? (
+            <div className="modal-text m-10 md:m-20">{content}</div>
+          ) : (
+            <a
+              href={content.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${content.url && "underline"} text-white`}
+            >
+              <div className="modal-text m-10 md:m-20 text-white">
+                {content.title}
+              </div>
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Spiral Animation */}
