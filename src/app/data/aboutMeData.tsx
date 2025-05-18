@@ -2,7 +2,7 @@ export const aboutMeData = [
   {
     value: "$100",
     detail:
-      "I grew up in Colorado, riding horses, camping, and falling in love with the mountains — a true Colorado native at heart!",
+      "I grew up in Colorado, riding horses, camping, and falling in love with the mountains, and it still feel like home to me here!",
   },
   {
     value: "$200",
@@ -12,12 +12,12 @@ export const aboutMeData = [
   {
     value: "$300",
     detail:
-      "I love road trips, quiet campfires, paddleboarding alpine lakes, and getting out on my snowboard in the winter.",
+      "I love road trips, quiet campfires, paddleboarding, and getting out on my snowboard in the winter.",
   },
   {
     value: "$400",
     detail:
-      "One of my biggest dreams is to hike the entire Pacific Crest Trail — I think 2,650 miles of wilderness and reflection would change a person.",
+      "One of my biggest dreams is to hike the entire Pacific Crest Trail — I think 2,650 miles of wilderness would change a person!",
   },
   {
     value: "$500",
