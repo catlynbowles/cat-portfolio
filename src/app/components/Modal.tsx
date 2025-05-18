@@ -35,8 +35,8 @@ const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
           ✖
         </button>
 
-        <div className="flex flex-col">
-          {media}
+        <div className="flex flex-col items-center">
+          {media && <div className="pt-24">{media}</div>}
 
           {content.url ? (
             <a
