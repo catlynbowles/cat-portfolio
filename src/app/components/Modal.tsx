@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Detail } from "./Column";
 
@@ -10,6 +10,18 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
@@ -23,7 +35,7 @@ const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
 
       {/* Modal Content */}
       <div
-        className="modal"
+        className="modal transform transition-transform duration-500 scale-100 bg-gray-800 rounded-lg shadow-lg p-5"
         style={{
           animation: "spiralIn 0.5s forwards",
         }}
@@ -35,7 +47,7 @@ const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
           ✖
         </button>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col  max-h-screen overflow-y-auto">
           {media && <div className="pt-24">{media}</div>}
 
           {content.url ? (
@@ -50,7 +62,9 @@ const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
               </div>
             </a>
           ) : (
-            <div className="modal-text m-10 md:m-20">{content.title}</div>
+            <div className="modal-text m-5 md:m-20 text-xs">
+              {content.title}
+            </div>
           )}
         </div>
       </div>
