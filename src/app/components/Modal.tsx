@@ -47,7 +47,7 @@ const Modal = ({ isOpen, onClose, content, media }: ModalProps) => {
           ✖
         </button>
 
-        <div className="flex flex-col  max-h-screen overflow-y-auto">
+        <div className="flex flex-col items-center justify-center max-h-screen overflow-y-auto">
           {media && <div className="pt-24">{media}</div>}
 
           {content.url ? (
