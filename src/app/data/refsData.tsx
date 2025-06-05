@@ -24,7 +24,7 @@ export const refsData = [
     value: "$400",
     detail: {
       title:
-        '"Catlyn soaks up knowledge like a sponge. She also goes out of her way to find issues to solve without tooting her own horn. When our mobile engineer went on parental leave, she stepped up so seamlessly that we lost no ground in building." - Tamara Griggs (Founder & CEO, Threadable Books)',
+        '"Catlyn soaks up knowledge like a sponge.  She also goes out of her way to find issues to solve without tooting her own horn. When our mobile engineer went on parental leave, she stepped up so seamlessly that we lost no ground in building." - Tamara Griggs (Founder & CEO, Threadable Books)',
     },
   },
   {
